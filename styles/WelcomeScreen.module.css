@@ -38,6 +38,7 @@ section .side#side2 {
 }
 
 .content {
+  margin-top: 200vh;
   color: #fff;
   padding: 50px;
 }

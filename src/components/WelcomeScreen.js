@@ -1,23 +1,15 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "next/link";
 
 const WelcomeScreen = () => {
-  const [videoPlay, setVideoPlay] = useState(true);
-  //   const videoRef1 = useRef();
-  //   const videoRef2 = useRef();
-
   useEffect(() => {
     setInterval(() => {
-      //   setVideoPlay(true);
-      console.log("hi");
-      //   videoRef1.current.play();
-      //   videoRef2.current.play();
-    }, 5000);
-
-    window.addEventListener("scroll", () => {
-      const side1 = document.getElementById("side1");
-      const side2 = document.getElementById("side2");
-      side1.style.left = -window.pageYOffset + "px";
-      side2.style.left = window.pageYOffset + "px";
+      window.addEventListener("scroll", () => {
+        const side1 = document.getElementById("side1");
+        const side2 = document.getElementById("side2");
+        side1.style.left = -window.pageYOffset + "px";
+        side2.style.left = window.pageYOffset + "px";
+      });
     });
   }, []);
 

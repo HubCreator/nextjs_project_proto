@@ -1,5 +1,5 @@
 import Head from "next/head";
-import WelcomeScreen from "./components/WelcomeScreen";
+import WelcomeScreen from "../src/components/WelcomeScreen";
 
 export default function Home() {
   return (
