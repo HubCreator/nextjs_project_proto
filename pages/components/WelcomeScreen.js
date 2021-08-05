@@ -1,37 +1,37 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const WelcomeScreen = () => {
-  const [videoPlay, setVideoPlay] = useState(false);
+  const [videoPlay, setVideoPlay] = useState(true);
+  //   const videoRef1 = useRef();
+  //   const videoRef2 = useRef();
 
   useEffect(() => {
     setInterval(() => {
-      setVideoPlay(true);
-    }, 1000);
+      //   setVideoPlay(true);
+      console.log("hi");
+      //   videoRef1.current.play();
+      //   videoRef2.current.play();
+    }, 5000);
+
+    window.addEventListener("scroll", () => {
+      const side1 = document.getElementById("side1");
+      const side2 = document.getElementById("side2");
+      side1.style.left = -window.pageYOffset + "px";
+      side2.style.left = window.pageYOffset + "px";
+    });
   }, []);
-
-  const side1 = document.getElementById("side1");
-  const side2 = document.getElementById("side2");
-
-  window.addEventListener("scroll", () => {
-    side1.style.left = -window.pageYOffset + "px";
-    side2.style.left = window.pageYOffset + "px";
-  });
 
   return (
     <>
       <section>
         <div className="side" id="side1">
-          {videoPlay ? (
-            <video width="100%" autoPlay loop>
-              <source src="note.mp4" type="video/mp4" />
-            </video>
-          ) : (
-            <div>Loading...</div>
-          )}
+          <video autoPlay loop muted style={{ width: "100%" }}>
+            <source src="note2.mp4" type="video/mp4" />
+          </video>
         </div>
         <div className="side" id="side2">
-          <video width="100%" autoPlay loop>
-            <source src="note.mp4" type="video/mp4" />
+          <video autoPlay loop muted style={{ width: "100%" }}>
+            <source src="note2.mp4" type="video/mp4" />
           </video>
         </div>
       </section>
