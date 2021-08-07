@@ -26,7 +26,7 @@ const Navbar = () => {
           </div>
 
           <ul
-            className={navStatus ? "contents__links active" : "contents__links"}
+            className={navStatus ? "contents__links" : "contents__links active"}
           >
             <li className="links__alink">Home</li>
             <li className="links__alink">Explore</li>
