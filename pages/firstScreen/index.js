@@ -1,5 +1,11 @@
+import Navbar from "../../src/components/Navbar";
+
 const firstScreen = () => {
-  return <div>hello</div>;
+  return (
+    <>
+      <Navbar />
+    </>
+  );
 };
 
 export default firstScreen;
