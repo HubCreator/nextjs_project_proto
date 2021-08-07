@@ -1,6 +1,6 @@
 import { IoLogoIonitron } from "react-icons/io";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { AiOutlineClose } from "react-icons/ai";
+import { IoMdClose } from "react-icons/io";
 import { useState } from "react";
 
 const Navbar = () => {
@@ -22,7 +22,7 @@ const Navbar = () => {
           </div>
 
           <div className="contents__controller" onClick={handleClick}>
-            {navStatus ? <GiHamburgerMenu /> : <AiOutlineClose />}
+            {navStatus ? <GiHamburgerMenu /> : <IoMdClose />}
           </div>
 
           <ul
@@ -33,17 +33,6 @@ const Navbar = () => {
             <li className="links__alink">Settings</li>
           </ul>
         </div>
-      </div>
-      {/* <button className="button" onClick={() => console.log("hello")}>
-        hello
-      </button> */}
-      <div
-        className="button"
-        onClick={() => {
-          console.log("fuck");
-        }}
-      >
-        hello
       </div>
     </>
   );
