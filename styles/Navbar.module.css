@@ -9,7 +9,6 @@
   width: 100%;
   height: 80px;
   box-sizing: border-box;
-  z-index: 1;
 }
 
 .navbar-container__contents {
@@ -54,22 +53,30 @@
 }
 
 .contents__controller {
-  display: none;
   visibility: hidden;
+}
+
+.button {
+  margin-top: 80vh;
 }
 
 @media screen and (max-width: 70rem) {
   .navbar-container__contents {
-    display: flex;
     justify-content: space-between;
     align-items: center;
   }
   .contents__controller {
-    display: block;
     visibility: visible;
     color: #fff;
     font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
     margin: 1rem;
+    background-color: rgb(153, 151, 150);
+    z-index: 99;
   }
 
   .contents__links {
