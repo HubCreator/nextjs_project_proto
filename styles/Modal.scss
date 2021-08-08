@@ -10,6 +10,9 @@
   background-color: #03a9f4;
   transition: 0.4s;
 }
+.modal-screen.active {
+  background-color: #f43648;
+}
 
 .modal-container {
   position: relative;

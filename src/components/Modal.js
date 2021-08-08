@@ -68,10 +68,10 @@ const Modal = () => {
   };
 
   return (
-    <div className="modal-screen">
+    <div className={signStatus ? "modal-screen" : "modal-screen active"}>
       <div className="modal-container">
         <div className="container__blueBg">
-          <div className="container__blueBg__box leftForm">
+          <div className="container__blueBg__box leftBox">
             {/* <h2 className="box__msg">Sure to post public?</h2>
             <button className="box__btn" onClick={onClick}>
               Go back
