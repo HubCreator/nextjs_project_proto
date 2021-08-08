@@ -14,7 +14,7 @@ const Navbar = () => {
     <>
       <div className="navbar-container">
         <div className="navbar-container__contents">
-          <div className="contents__logo">
+          <div className="contents__logo" onClick={handleClick}>
             <div className="contents__logo__img">
               <IoLogoIonitron />
             </div>
@@ -28,9 +28,15 @@ const Navbar = () => {
           <ul
             className={navStatus ? "contents__links" : "contents__links active"}
           >
-            <li className="links__alink">Home</li>
-            <li className="links__alink">Explore</li>
-            <li className="links__alink">Settings</li>
+            <li className="links__alink" onClick={handleClick}>
+              Home
+            </li>
+            <li className="links__alink" onClick={handleClick}>
+              Explore
+            </li>
+            <li className="links__alink" onClick={handleClick}>
+              Settings
+            </li>
           </ul>
         </div>
       </div>
