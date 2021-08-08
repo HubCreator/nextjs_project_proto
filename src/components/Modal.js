@@ -13,23 +13,38 @@ const Modal = () => {
   };
 
   const validateInput = () => {
+    const tmp = [...validation];
+
     if (title.length > 5) {
-      const tmp = [...validation];
       tmp[0] = true;
       setValidation(tmp);
+    } else {
+      tmp[0] = false;
+      setValidation(tmp);
     }
+
     if (description.length > 10) {
-      const tmp = [...validation];
       tmp[1] = true;
       setValidation(tmp);
-    }
-    if (name.length > 2) {
-      const tmp = [...validation];
-      tmp[2] = true;
+    } else {
+      tmp[1] = false;
       setValidation(tmp);
     }
+
+    if (name.length > 2) {
+      tmp[2] = true;
+      setValidation(tmp);
+    } else {
+      tmp[2] = false;
+      setValidation(tmp);
+    }
+
     console.log(validation);
-    !validation.includes(false) && setIsPassedValid(true);
+
+    // !validation.includes(false) && setIsPassedValid(true);
+    validation.includes(false)
+      ? setIsPassedValid(false)
+      : setIsPassedValid(true);
   };
 
   const onChange = (event) => {
@@ -82,7 +97,7 @@ const Modal = () => {
 
           <div className="container__blueBg__box rightBox">
             <h2 className="box__msg">
-              {isPassedValid ? "Next Step" : "Error"}
+              {isPassedValid ? "Valid!! Go Next Step" : "Error"}
             </h2>
             <button
               className="box__btn"
