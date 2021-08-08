@@ -6,6 +6,8 @@ const Modal = () => {
   const [description, setDescription] = useState("");
   const [name, setName] = useState("");
   const [validation, setValidation] = useState([false, false, false]);
+  const [isPassedValid, setIsPassedValid] = useState(false);
+
   const onClick = () => {
     setSignStatus(!signStatus);
   };
@@ -27,6 +29,7 @@ const Modal = () => {
       setValidation(tmp);
     }
     console.log(validation);
+    !validation.includes(false) && setIsPassedValid(true);
   };
 
   const onChange = (event) => {
@@ -56,19 +59,19 @@ const Modal = () => {
             </button> */}
             <div className="leftBox__content">
               <div className="leftBox__title">
-                <span>Title</span>
+                <h3>Title</h3>
                 <span>{title}</span>
               </div>
             </div>
             <div className="leftBox__content">
               <div className="leftBox__description">
-                <span>Description</span>
-                <span>{description}</span>
+                <h3>Description</h3>
+                <pre>{description}</pre>
               </div>
             </div>
             <div className="leftBox__content">
               <div className="leftBox__name">
-                <span>Name</span>
+                <h3>Name</h3>
                 <span>{name}</span>
               </div>
             </div>
@@ -79,9 +82,13 @@ const Modal = () => {
 
           <div className="container__blueBg__box rightBox">
             <h2 className="box__msg">
-              {validation.includes(false) ? "Error" : "Next Step"}
+              {isPassedValid ? "Next Step" : "Error"}
             </h2>
-            <button className="box__btn" onClick={onClick}>
+            <button
+              className="box__btn"
+              onClick={onClick}
+              disabled={!isPassedValid}
+            >
               Next
             </button>
           </div>
@@ -111,7 +118,7 @@ const Modal = () => {
                   className="formBox__content__description"
                   type="text"
                   placeholder="Description.."
-                  value={description}
+                  value={`${description}`}
                   onChange={onChange}
                 />
               </div>
