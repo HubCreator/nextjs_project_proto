@@ -1,13 +1,15 @@
-.leftForm__content {
+.leftForm__contents {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  //   margin: 2rem;
+  margin: 2rem;
   padding: 0 1rem;
   width: 100%;
   height: 100%;
+}
 
+.leftForm__content {
   span {
     font-size: 1.5rem;
     font-weight: 500;
@@ -24,15 +26,17 @@
 .leftForm__title,
 .leftForm__name {
   flex: 1;
+  width: 100%;
 }
 
 .leftForm__description {
   flex: 2;
+  width: 100%;
+
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: flex-start;
-  padding: 1rem;
 
   textarea {
     width: 90%;

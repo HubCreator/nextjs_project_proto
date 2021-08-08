@@ -120,7 +120,7 @@ const Modal = () => {
           }
         >
           {signStatus ? (
-            <>
+            <div className="leftForm__contents">
               <div className="leftForm__content leftForm__title">
                 <span>Title</span>
                 <input
@@ -151,9 +151,9 @@ const Modal = () => {
                   onChange={onChange}
                 />
               </div>
-            </>
+            </div>
           ) : (
-            <>
+            <div className="rightForm__contents">
               <div className="rightForm__content rightForm__notice">
                 Notice!!
               </div>
@@ -167,7 +167,7 @@ const Modal = () => {
               >
                 Next
               </button>
-            </>
+            </div>
           )}
         </div>
       </div>
