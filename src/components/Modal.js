@@ -12,6 +12,10 @@ const Modal = () => {
     setSignStatus(!signStatus);
   };
 
+  const handleSubmit = () => {
+    console.log("Completed!!!!");
+  };
+
   const validateInput = () => {
     const tmp = [...validation];
 
@@ -149,7 +153,21 @@ const Modal = () => {
               </div>
             </>
           ) : (
-            <></>
+            <>
+              <div className="rightForm__content rightForm__notice">
+                Notice!!
+              </div>
+              <div className="rightForm__content rightForm__info">
+                Your work will be uploaded on dashboard. Make sure it's okay to
+                be public.
+              </div>
+              <button
+                className="rightForm__content rightForm__btn"
+                onClick={handleSubmit}
+              >
+                Next
+              </button>
+            </>
           )}
         </div>
       </div>
