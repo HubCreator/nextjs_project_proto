@@ -58,6 +58,12 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.box__btn:hover {
+  color: #fff;
+  background-color: #f43648;
 }
 
 .container__formBox {
@@ -68,7 +74,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 99;
+  z-index: 20;
   box-shadow: 0 5px 45px rgba(0, 0, 0, 0.25);
   background-color: #fff;
   overflow: hidden;

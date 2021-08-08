@@ -12,6 +12,11 @@ const Modal = () => {
     setSignStatus(!signStatus);
   };
 
+  const onKeyPress = (event) => {
+    const { code } = event;
+    if (code === "Enter") event.preventDefault();
+  };
+
   const handleSubmit = () => {
     console.log("Completed!!!!");
   };
@@ -43,7 +48,9 @@ const Modal = () => {
       setValidation(tmp);
     }
 
-    console.log(validation);
+    // if (value === "\n") return;
+
+    // console.log(validation);
 
     // !validation.includes(false) && setIsPassedValid(true);
     validation.includes(false)
@@ -81,7 +88,7 @@ const Modal = () => {
             <div className="leftBox__content">
               <div className="leftBox__description">
                 <h3>Description</h3>
-                <pre>{description}</pre>
+                <span>{description}</span>
               </div>
             </div>
             <div className="leftBox__content">
@@ -122,6 +129,7 @@ const Modal = () => {
                 placeholder="Title.."
                 value={title}
                 onChange={onChange}
+                onKeyPress={onKeyPress}
               />
             </div>
             <div className="leftForm__content leftForm__description">
@@ -132,6 +140,7 @@ const Modal = () => {
                 placeholder="Description.."
                 value={`${description}`}
                 onChange={onChange}
+                onKeyPress={onKeyPress}
               />
             </div>
             <div className="leftForm__content leftForm__name">
@@ -142,6 +151,7 @@ const Modal = () => {
                 placeholder="Name.."
                 value={name}
                 onChange={onChange}
+                onKeyPress={onKeyPress}
               />
             </div>
           </div>
