@@ -50,7 +50,28 @@ const Modal = () => {
       <div className="modal-container">
         <div className="container__blueBg">
           <div className="container__blueBg__box leftBox">
-            <h2 className="box__msg">Sure to post public?</h2>
+            {/* <h2 className="box__msg">Sure to post public?</h2>
+            <button className="box__btn" onClick={onClick}>
+              Go back
+            </button> */}
+            <div className="leftBox__content">
+              <div className="leftBox__title">
+                <span>Title</span>
+                <span>{title}</span>
+              </div>
+            </div>
+            <div className="leftBox__content">
+              <div className="leftBox__description">
+                <span>Description</span>
+                <span>{description}</span>
+              </div>
+            </div>
+            <div className="leftBox__content">
+              <div className="leftBox__name">
+                <span>Name</span>
+                <span>{name}</span>
+              </div>
+            </div>
             <button className="box__btn" onClick={onClick}>
               Go back
             </button>
