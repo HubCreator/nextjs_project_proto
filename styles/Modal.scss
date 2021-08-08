@@ -69,7 +69,7 @@
   transition: 0.5s ease-out;
 }
 
-.formBox__content {
+.leftForm__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -92,12 +92,12 @@
   }
 }
 
-.formBox__title,
-.formBox__name {
+.leftForm__title,
+.leftForm__name {
   flex: 1;
 }
 
-.formBox__description {
+.leftForm__description {
   flex: 2;
   display: flex;
   flex-direction: column;
@@ -112,12 +112,12 @@
   }
 }
 
-.container__formBox.leftBox {
+.container__formBox.leftForm {
   top: 0;
   left: 0;
 }
 
-.container__formBox.rightBox {
+.container__formBox.rightForm {
   top: 0;
   left: 50%;
 }

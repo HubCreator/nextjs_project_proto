@@ -52,9 +52,9 @@ const Modal = () => {
       target: { value, className },
     } = event;
 
-    if (className === "formBox__content__title") {
+    if (className === "leftForm__content__title") {
       setTitle(value);
-    } else if (className === "formBox__content__description") {
+    } else if (className === "leftForm__content__description") {
       setDescription(value);
     } else {
       setName(value);
@@ -67,30 +67,30 @@ const Modal = () => {
     <div className="modal-screen">
       <div className="modal-container">
         <div className="container__blueBg">
-          <div className="container__blueBg__box leftBox">
+          <div className="container__blueBg__box leftForm">
             {/* <h2 className="box__msg">Sure to post public?</h2>
             <button className="box__btn" onClick={onClick}>
               Go back
             </button> */}
-            <div className="leftBox__content">
+            <div className="leftBox__content title">
               <div className="leftBox__title">
                 <h3>Title</h3>
                 <span>{title}</span>
               </div>
             </div>
-            <div className="leftBox__content">
+            <div className="leftBox__content description">
               <div className="leftBox__description">
                 <h3>Description</h3>
                 <pre>{description}</pre>
               </div>
             </div>
-            <div className="leftBox__content">
+            <div className="leftBox__content name">
               <div className="leftBox__name">
                 <h3>Name</h3>
                 <span>{name}</span>
               </div>
             </div>
-            <button className="box__btn" onClick={onClick}>
+            <button className="leftBox__btn" onClick={onClick}>
               Go back
             </button>
           </div>
@@ -111,36 +111,36 @@ const Modal = () => {
         <div
           className={
             signStatus
-              ? "container__formBox leftBox"
-              : "container__formBox rightBox"
+              ? "container__formBox leftForm"
+              : "container__formBox rightForm"
           }
         >
           {signStatus ? (
             <>
-              <div className="formBox__content formBox__title">
+              <div className="leftForm__content leftForm__title">
                 <span>Title</span>
                 <input
-                  className="formBox__content__title"
+                  className="leftForm__content__title"
                   type="text"
                   placeholder="Title.."
                   value={title}
                   onChange={onChange}
                 />
               </div>
-              <div className="formBox__content formBox__description">
+              <div className="leftForm__content leftForm__description">
                 <span>Description</span>
                 <textarea
-                  className="formBox__content__description"
+                  className="leftForm__content__description"
                   type="text"
                   placeholder="Description.."
                   value={`${description}`}
                   onChange={onChange}
                 />
               </div>
-              <div className="formBox__content formBox__name">
+              <div className="leftForm__content leftForm__name">
                 <span>Name</span>
                 <input
-                  className="formBox__content__name"
+                  className="leftForm__content__name"
                   type="text"
                   placeholder="Name.."
                   value={name}
@@ -149,7 +149,7 @@ const Modal = () => {
               </div>
             </>
           ) : (
-            <div>hello</div>
+            <></>
           )}
         </div>
       </div>
