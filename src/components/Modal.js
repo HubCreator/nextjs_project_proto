@@ -72,10 +72,6 @@ const Modal = () => {
       <div className="modal-container">
         <div className="container__blueBg">
           <div className="container__blueBg__box leftBox">
-            {/* <h2 className="box__msg">Sure to post public?</h2>
-            <button className="box__btn" onClick={onClick}>
-              Go back
-            </button> */}
             <div className="leftBox__content title">
               <div className="leftBox__title">
                 <h3>Title</h3>
@@ -112,6 +108,7 @@ const Modal = () => {
             </button>
           </div>
         </div>
+
         <div
           className={
             signStatus
