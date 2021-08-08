@@ -92,7 +92,6 @@
 .formBox__title,
 .formBox__name {
   flex: 1;
-  background-color: wheat;
 }
 
 .formBox__description {
@@ -101,10 +100,11 @@
   flex-direction: column;
   justify-content: start;
   align-items: flex-start;
+  padding: 1rem;
 
   textarea {
     width: 90%;
-    height: 80px;
+    height: 100%;
   }
 }
 
