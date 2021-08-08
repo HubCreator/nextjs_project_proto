@@ -112,60 +112,55 @@ const Modal = () => {
         <div
           className={
             signStatus
-              ? "container__formBox leftForm "
-              : "container__formBox rightForm"
+              ? "container__formBox leftForm"
+              : "container__formBox leftForm active rightForm"
           }
         >
-          {signStatus ? (
-            <div className="leftForm__contents">
-              <div className="leftForm__content leftForm__title">
-                <span>Title</span>
-                <input
-                  className="leftForm__content__title"
-                  type="text"
-                  placeholder="Title.."
-                  value={title}
-                  onChange={onChange}
-                />
-              </div>
-              <div className="leftForm__content leftForm__description">
-                <span>Description</span>
-                <textarea
-                  className="leftForm__content__description"
-                  type="text"
-                  placeholder="Description.."
-                  value={`${description}`}
-                  onChange={onChange}
-                />
-              </div>
-              <div className="leftForm__content leftForm__name">
-                <span>Name</span>
-                <input
-                  className="leftForm__content__name"
-                  type="text"
-                  placeholder="Name.."
-                  value={name}
-                  onChange={onChange}
-                />
-              </div>
+          <div className="leftForm__contents">
+            <div className="leftForm__content leftForm__title">
+              <span>Title</span>
+              <input
+                className="leftForm__content__title"
+                type="text"
+                placeholder="Title.."
+                value={title}
+                onChange={onChange}
+              />
             </div>
-          ) : (
-            <div className="rightForm__contents">
-              <div className="rightForm__content rightForm__notice">
-                Notice!!
-              </div>
-              <div className="rightForm__content rightForm__info">
-                Your work will be uploaded on dashboard. Make sure it's okay to
-                be public.
-              </div>
-              <button
-                className="rightForm__content rightForm__btn"
-                onClick={handleSubmit}
-              >
-                Next
-              </button>
+            <div className="leftForm__content leftForm__description">
+              <span>Description</span>
+              <textarea
+                className="leftForm__content__description"
+                type="text"
+                placeholder="Description.."
+                value={`${description}`}
+                onChange={onChange}
+              />
             </div>
-          )}
+            <div className="leftForm__content leftForm__name">
+              <span>Name</span>
+              <input
+                className="leftForm__content__name"
+                type="text"
+                placeholder="Name.."
+                value={name}
+                onChange={onChange}
+              />
+            </div>
+          </div>
+          <div className="rightForm__contents">
+            <div className="rightForm__content rightForm__notice">Notice!!</div>
+            <div className="rightForm__content rightForm__info">
+              Your work will be uploaded on dashboard. Make sure it's okay to be
+              public.
+            </div>
+            <button
+              className="rightForm__content rightForm__btn"
+              onClick={handleSubmit}
+            >
+              Next
+            </button>
+          </div>
         </div>
       </div>
     </div>
