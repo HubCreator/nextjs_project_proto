@@ -72,27 +72,24 @@ const Modal = () => {
       <div className="modal-container">
         <div className="container__blueBg">
           <div className="container__blueBg__box leftBox">
-            <div className="leftBox__content title">
+            <div className="leftBox__content">
               <div className="leftBox__title">
                 <h3>Title</h3>
                 <span>{title}</span>
               </div>
             </div>
-            <div className="leftBox__content description">
+            <div className="leftBox__content">
               <div className="leftBox__description">
                 <h3>Description</h3>
                 <pre>{description}</pre>
               </div>
             </div>
-            <div className="leftBox__content name">
+            <div className="leftBox__content">
               <div className="leftBox__name">
                 <h3>Name</h3>
                 <span>{name}</span>
               </div>
             </div>
-            <button className="leftBox__btn" onClick={onClick}>
-              Go back
-            </button>
           </div>
 
           <div className="container__blueBg__box rightBox">
@@ -154,6 +151,9 @@ const Modal = () => {
               Your work will be uploaded on dashboard. Make sure it's okay to be
               public.
             </div>
+            <button className="leftBox__btn" onClick={onClick}>
+              Go back
+            </button>
             <button
               className="rightForm__content rightForm__btn"
               onClick={handleSubmit}
