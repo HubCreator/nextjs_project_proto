@@ -115,7 +115,7 @@ const Modal = () => {
         <div
           className={
             signStatus
-              ? "container__formBox leftForm"
+              ? "container__formBox leftForm "
               : "container__formBox rightForm"
           }
         >

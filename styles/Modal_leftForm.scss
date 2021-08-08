@@ -1,4 +1,5 @@
 .leftForm__contents {
+  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,6 +8,8 @@
   padding: 0 1rem;
   width: 100%;
   height: 100%;
+  // left: -100%;
+  // transition: 0.5s;
 }
 
 .leftForm__content {
