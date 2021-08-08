@@ -5,8 +5,28 @@ const Modal = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [name, setName] = useState("");
+  const [validation, setValidation] = useState([false, false, false]);
   const onClick = () => {
     setSignStatus(!signStatus);
+  };
+
+  const validateInput = () => {
+    if (title.length > 5) {
+      const tmp = [...validation];
+      tmp[0] = true;
+      setValidation(tmp);
+    }
+    if (description.length > 10) {
+      const tmp = [...validation];
+      tmp[1] = true;
+      setValidation(tmp);
+    }
+    if (name.length > 2) {
+      const tmp = [...validation];
+      tmp[2] = true;
+      setValidation(tmp);
+    }
+    console.log(validation);
   };
 
   const onChange = (event) => {
@@ -21,6 +41,8 @@ const Modal = () => {
     } else {
       setName(value);
     }
+
+    validateInput();
   };
 
   return (
@@ -35,9 +57,11 @@ const Modal = () => {
           </div>
 
           <div className="container__blueBg__box rightBox">
-            <h2 className="box__msg">Don't Have an Account ?</h2>
+            <h2 className="box__msg">
+              {validation.includes(false) ? "Error" : "Next Step"}
+            </h2>
             <button className="box__btn" onClick={onClick}>
-              Sign up
+              Next
             </button>
           </div>
         </div>
