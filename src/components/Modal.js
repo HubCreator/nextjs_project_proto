@@ -151,15 +151,17 @@ const Modal = () => {
               Your work will be uploaded on dashboard. Make sure it's okay to be
               public.
             </div>
-            <button className="leftBox__btn" onClick={onClick}>
-              Go back
-            </button>
-            <button
-              className="rightForm__content rightForm__btn"
-              onClick={handleSubmit}
-            >
-              Next
-            </button>
+            <div className="rightForm__content rightForm__btns">
+              <button className="rightForm__btn go-back-btn" onClick={onClick}>
+                Go back
+              </button>
+              <button
+                className="rightForm__btn submit-btn"
+                onClick={handleSubmit}
+              >
+                Next
+              </button>
+            </div>
           </div>
         </div>
       </div>
