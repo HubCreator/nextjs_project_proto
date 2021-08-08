@@ -82,19 +82,25 @@ const Modal = () => {
             <div className="leftBox__content">
               <div className="leftBox__title">
                 <h3>Title</h3>
-                <span>{title}</span>
+                <div className="leftBox__title__content">
+                  <span>{title}</span>
+                </div>
               </div>
             </div>
             <div className="leftBox__content">
               <div className="leftBox__description">
                 <h3>Description</h3>
-                <span>{description}</span>
+                <div className="leftBox__description__content">
+                  <span>{description}</span>
+                </div>
               </div>
             </div>
             <div className="leftBox__content">
               <div className="leftBox__name">
                 <h3>Name</h3>
-                <span>{name}</span>
+                <div className="leftBox__name__content">
+                  <span>{name}</span>
+                </div>
               </div>
             </div>
           </div>
@@ -138,7 +144,7 @@ const Modal = () => {
                 className="leftForm__content__description"
                 type="text"
                 placeholder="Description.."
-                value={`${description}`}
+                value={description}
                 onChange={onChange}
                 onKeyPress={onKeyPress}
               />
