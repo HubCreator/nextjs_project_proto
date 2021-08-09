@@ -24,35 +24,12 @@ const Modal = () => {
   const validateInput = () => {
     const tmp = [...validation];
 
-    if (title.length > 5) {
-      tmp[0] = true;
-      setValidation(tmp);
-    } else {
-      tmp[0] = false;
-      setValidation(tmp);
-    }
+    tmp[0] = title.length > 5 ? true : false;
+    tmp[1] = description.length > 10 ? true : false;
+    tmp[2] = name.length > 2 ? true : false;
 
-    if (description.length > 10) {
-      tmp[1] = true;
-      setValidation(tmp);
-    } else {
-      tmp[1] = false;
-      setValidation(tmp);
-    }
+    setValidation(tmp);
 
-    if (name.length > 2) {
-      tmp[2] = true;
-      setValidation(tmp);
-    } else {
-      tmp[2] = false;
-      setValidation(tmp);
-    }
-
-    // if (value === "\n") return;
-
-    // console.log(validation);
-
-    // !validation.includes(false) && setIsPassedValid(true);
     validation.includes(false)
       ? setIsPassedValid(false)
       : setIsPassedValid(true);
