@@ -47,8 +47,9 @@
     display: block;
     height: 100%;
     width: 100%;
-    color: black;
     overflow-wrap: break-word;
+    overflow: hidden;
+    opacity: 0.7;
   }
 }
 
