@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Modal = () => {
   const [signStatus, setSignStatus] = useState(true); // true: left
@@ -7,6 +7,31 @@ const Modal = () => {
   const [name, setName] = useState("");
   const [validation, setValidation] = useState([false, false, false]);
   const [isPassedValid, setIsPassedValid] = useState(false);
+
+  const onChange = (event) => {
+    const {
+      target: { value, className },
+    } = event;
+
+    if (className === "leftForm__content__title") {
+      setTitle(value);
+    } else if (className === "leftForm__content__description") {
+      setDescription(value);
+    } else if (className === "leftForm__content__name") {
+      setName(value);
+    }
+  };
+
+  useEffect(() => {
+    let tmp = [...validation];
+
+    tmp[0] = title.length >= 5 ? true : false;
+    tmp[1] = description.length >= 10 ? true : false;
+    tmp[2] = name.length >= 2 ? true : false;
+
+    setValidation(tmp);
+    tmp.includes(false) ? setIsPassedValid(false) : setIsPassedValid(true);
+  }, [title, description, name]);
 
   const onClick = () => {
     setSignStatus(!signStatus);
@@ -21,38 +46,9 @@ const Modal = () => {
     console.log("Completed!!!!");
   };
 
-  const validateInput = () => {
-    const tmp = [...validation];
-
-    tmp[0] = title.length > 5 ? true : false;
-    tmp[1] = description.length > 10 ? true : false;
-    tmp[2] = name.length > 2 ? true : false;
-
-    setValidation(tmp);
-
-    validation.includes(false)
-      ? setIsPassedValid(false)
-      : setIsPassedValid(true);
-  };
-
-  const onChange = (event) => {
-    const {
-      target: { value, className },
-    } = event;
-
-    if (className === "leftForm__content__title") {
-      setTitle(value);
-    } else if (className === "leftForm__content__description") {
-      setDescription(value);
-    } else {
-      setName(value);
-    }
-
-    validateInput();
-  };
-
   return (
     <div className={signStatus ? "modal-screen" : "modal-screen active"}>
+      {console.log(validation)}
       <div className="modal-container">
         <div className="container__blueBg">
           <div className="container__blueBg__box leftBox">
