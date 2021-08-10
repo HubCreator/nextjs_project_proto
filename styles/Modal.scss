@@ -9,13 +9,48 @@
   height: 200vh;
   width: 100%;
   background-color: #03a9f4;
-  transition: 0.4s;
   position: absolute;
   left: 0;
   top: 80px;
+  will-change: transition;
+  transition: 1s;
 }
+
 .modal-screen.active {
   background-color: #f43648;
+}
+
+.modal-trigger {
+  position: absolute;
+  top: 100px;
+  left: calc(50% - 100px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background-color: tomato;
+  z-index: 999;
+}
+
+.modal-toggle {
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  will-change: transition;
+  transition: 1s;
+}
+
+.modal-toggle.active {
+  visibility: visible;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
 }
 
 .modal-container {
