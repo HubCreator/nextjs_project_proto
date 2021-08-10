@@ -96,11 +96,11 @@ const Modal = () => {
               </div>
 
               <div className="container__blueBg__box rightBox">
-                <h2 className="box__msg">
+                <h2 className={isPassedValid ? "box__msg valid" : "box__msg"}>
                   {isPassedValid ? "Go Next Step!" : "Fill in the blank!"}
                 </h2>
                 <button
-                  className="box__btn"
+                  className={isPassedValid ? "box__btn valid" : "box__btn"}
                   onClick={onClick}
                   disabled={!isPassedValid}
                 >

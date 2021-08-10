@@ -90,6 +90,11 @@
   margin: 1rem 0;
   display: block;
   overflow-wrap: break-word;
+  transition: 0.5s;
+}
+
+.box__msg.valid {
+  color: #f43648;
 }
 
 .box__btn {
@@ -98,11 +103,10 @@
   font-size: 1rem;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
   transition: 0.3s;
 }
 
-.box__btn:hover {
+.box__btn.valid:hover {
   color: #fff;
   background-color: #f43648;
 }
