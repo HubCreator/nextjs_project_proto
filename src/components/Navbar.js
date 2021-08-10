@@ -21,11 +21,10 @@ const Navbar = () => {
             <div className="contents__logo__name">Welcome</div>
           </div>
 
-          <div className="contents__controller" onClick={handleClick}>
-            {navStatus ? <GiHamburgerMenu /> : <IoMdClose />}
-          </div>
-
           <nav className="navigation">
+            <div className="contents__controller" onClick={handleClick}>
+              {navStatus ? <GiHamburgerMenu /> : <IoMdClose />}
+            </div>
             <ul
               className={
                 navStatus ? "contents__links" : "contents__links active"

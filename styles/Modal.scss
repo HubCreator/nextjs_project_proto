@@ -105,6 +105,9 @@
   border-radius: 5px;
   transition: 0.3s;
 }
+.box__btn.valid {
+  color: #f43648;
+}
 
 .box__btn.valid:hover {
   color: #fff;
