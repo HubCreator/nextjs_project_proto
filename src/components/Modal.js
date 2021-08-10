@@ -23,7 +23,22 @@ const Modal = () => {
     }
   };
 
-  useEffect(() => {
+  const onClick = () => {
+    setSignStatus(!signStatus);
+  };
+
+  const onKeyPress = (event) => {
+    const { code } = event;
+    // console.log(code);
+    if (code === "Enter" || code === "Digit2" || code === "Digit3")
+      event.preventDefault();
+  };
+
+  const handleSubmit = () => {
+    console.log("Completed!!!!");
+  };
+
+  const handleValidation = () => {
     let tmp = [...validation];
 
     tmp[0] = title.length >= 5 ? true : false;
@@ -32,20 +47,11 @@ const Modal = () => {
 
     setValidation(tmp);
     tmp.includes(false) ? setIsPassedValid(false) : setIsPassedValid(true);
+  };
+
+  useEffect(() => {
+    handleValidation();
   }, [title, description, name]);
-
-  const onClick = () => {
-    setSignStatus(!signStatus);
-  };
-
-  const onKeyPress = (event) => {
-    const { code } = event;
-    if (code === "Enter") event.preventDefault();
-  };
-
-  const handleSubmit = () => {
-    console.log("Completed!!!!");
-  };
 
   return (
     <>
