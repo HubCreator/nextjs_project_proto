@@ -12,7 +12,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="navbar-container">
+      <header className="navbar-container">
         <div className="navbar-container__contents">
           <div className="contents__logo" onClick={handleClick}>
             <div className="contents__logo__img">
@@ -25,21 +25,25 @@ const Navbar = () => {
             {navStatus ? <GiHamburgerMenu /> : <IoMdClose />}
           </div>
 
-          <ul
-            className={navStatus ? "contents__links" : "contents__links active"}
-          >
-            <li className="links__alink" onClick={handleClick}>
-              Home
-            </li>
-            <li className="links__alink" onClick={handleClick}>
-              Explore
-            </li>
-            <li className="links__alink" onClick={handleClick}>
-              Settings
-            </li>
-          </ul>
+          <nav className="navigation">
+            <ul
+              className={
+                navStatus ? "contents__links" : "contents__links active"
+              }
+            >
+              <li className="links__alink" onClick={handleClick}>
+                Home
+              </li>
+              <li className="links__alink" onClick={handleClick}>
+                Explore
+              </li>
+              <li className="links__alink" onClick={handleClick}>
+                Settings
+              </li>
+            </ul>
+          </nav>
         </div>
-      </div>
+      </header>
     </>
   );
 };
