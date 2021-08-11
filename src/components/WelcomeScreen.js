@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "next/link";
 
+// need to be changed!!
+
 const WelcomeScreen = () => {
   useEffect(() => {
     setInterval(() => {
