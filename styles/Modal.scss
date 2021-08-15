@@ -2,6 +2,21 @@
 @import "./Modal_leftForm.scss";
 @import "./Modal_rightForm.scss";
 
+.modal-trigger {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background-color: tomato;
+  z-index: 999;
+  color: white;
+}
+
 .modal-screen {
   display: flex;
   justify-content: center;
@@ -18,20 +33,6 @@
 
 .modal-screen.active {
   background-color: #f43648;
-}
-
-.modal-trigger {
-  position: absolute;
-  top: 100px;
-  left: calc(50% - 100px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  background-color: tomato;
-  z-index: 999;
 }
 
 .modal-toggle {

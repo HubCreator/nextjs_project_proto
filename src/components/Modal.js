@@ -57,13 +57,11 @@ const Modal = () => {
     <>
       <div
         className={modalTrigger ? "modal-trigger active" : "modal-trigger"}
-        onClick={() => {
-          console.log("clicked");
-          setModalTrigger((prev) => !prev);
-        }}
+        onClick={() => setModalTrigger((prev) => !prev)}
       >
-        hello
+        Click here!
       </div>
+
       <div className={modalTrigger ? "modal-toggle active" : "modal-toggle"}>
         <div className={signStatus ? "modal-screen" : "modal-screen active"}>
           <div className="modal-container">
@@ -155,10 +153,10 @@ const Modal = () => {
                 <div className="rightForm__content rightForm__notice">
                   Notice!!
                 </div>
-                <div className="rightForm__content rightForm__info">
+                <p className="rightForm__content rightForm__info">
                   Your work will be uploaded on dashboard. Make sure it's okay
                   to be public.
-                </div>
+                </p>
                 <div className="rightForm__content rightForm__btns">
                   <button
                     className="rightForm__btn go-back-btn"
