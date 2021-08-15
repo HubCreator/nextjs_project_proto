@@ -56,7 +56,7 @@ const Modal = () => {
   return (
     <>
       <div
-        className={modalTrigger ? "modal-trigger active" : "modal-trigger"}
+        className="modal-trigger"
         onClick={() => setModalTrigger((prev) => !prev)}
       >
         Click here!
