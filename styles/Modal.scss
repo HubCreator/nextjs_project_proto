@@ -58,11 +58,12 @@
 .modal-container {
   position: relative;
   width: 80%;
-  height: 600px;
+  height: clamp(530px, 80%, 65%);
   margin: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: aqua;
 }
 
 .container__blueBg {
