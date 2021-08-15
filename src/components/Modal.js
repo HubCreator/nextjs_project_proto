@@ -157,6 +157,7 @@ const Modal = () => {
                   Your work will be uploaded on dashboard. Make sure it's okay
                   to be public.
                 </p>
+
                 <div className="rightForm__content rightForm__btns">
                   <button
                     className="rightForm__btn go-back-btn"

@@ -10,8 +10,6 @@
 
 .modal-trigger {
   position: absolute;
-  // inset: 0;
-  // margin: auto;
   top: var(--nav-height);
   display: flex;
   justify-content: center;
@@ -20,8 +18,9 @@
   width: 6rem;
   height: 6rem;
   background-color: tomato;
-  z-index: 999;
   color: white;
+  cursor: pointer;
+  z-index: 999;
 }
 
 .modal-toggle {
@@ -45,7 +44,7 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 100%;
+  height: clamp(100%, 250vh, 150vh);
   background-color: #03a9f4;
   position: absolute;
   top: var(--nav-height);
@@ -72,16 +71,21 @@
   position: absolute;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   width: 100%;
   height: 90%;
   background-color: rgba(225, 225, 225, 0.2);
-  border-radius: 5px;
   box-shadow: 0 5px 45px rgba(0, 0, 0, 0.15);
-}
 
-.container__box {
-  height: 100%;
-  flex-basis: 100%;
+  .container__box {
+    background-color: wheat;
+    border-radius: 5px;
+    height: 100%;
+    min-width: 20rem;
+    display: flex;
+    flex-basis: 100%;
+    flex: 1;
+  }
 }
 
 .container__formBox {
@@ -94,6 +98,7 @@
   align-items: center;
   z-index: 20;
   box-shadow: 0 5px 45px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
   background-color: #fff;
   overflow: hidden;
   transition: 0.5s ease-out;
@@ -121,30 +126,13 @@
   .modal-container {
     position: relative;
     width: 80%;
-    height: 600px;
+    height: 30rem;
     margin: 2rem;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
-  }
-
-  .container__bg {
-    top: 0;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .container__box {
-    width: 100%;
   }
 
   .container__formBox {
     width: 100%;
-    height: 70%;
+    height: 100%;
     top: 0;
     box-shadow: none;
     flex-direction: column;
@@ -159,7 +147,7 @@
   }
 
   .container__formBox.rightForm {
-    top: 70%;
+    top: 100%;
     left: 0;
     transition: 0.5s ease-out;
   }
