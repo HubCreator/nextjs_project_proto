@@ -1,4 +1,6 @@
 @import "./Modal_leftBox.scss";
+@import "./Modal_rightBox.scss";
+
 @import "./Modal_leftForm.scss";
 @import "./Modal_rightForm.scss";
 
@@ -8,8 +10,9 @@
 
 .modal-trigger {
   position: absolute;
-  inset: 0;
-  margin: auto;
+  // inset: 0;
+  // margin: auto;
+  top: var(--nav-height);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,44 +80,8 @@
 }
 
 .container__box {
-  position: relative;
-  width: 50%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.box__msg {
-  color: #fff;
-  font-size: 1.8rem;
-  font-weight: 600;
-  margin: 1rem 0;
-  display: block;
-  overflow-wrap: break-word;
-  transition: 0.5s;
-}
-
-.box__msg.valid {
-  color: #f43648;
-}
-
-.box__btn {
-  padding: 0.5rem 1rem;
-  font-weight: 600;
-  font-size: 1rem;
-  border: none;
-  border-radius: 5px;
-  transition: 0.3s;
-}
-.box__btn.valid {
-  color: #f43648;
-}
-
-.box__btn.valid:hover {
-  color: #fff;
-  background-color: #f43648;
+  flex-basis: 100%;
 }
 
 .container__formBox {
@@ -130,19 +97,16 @@
   background-color: #fff;
   overflow: hidden;
   transition: 0.5s ease-out;
-  left: 0;
 }
 
 .container__formBox.leftForm {
   top: 0;
   left: 0;
-  transition: 0.5s ease-out;
 }
 
 .container__formBox.rightForm {
   top: 0;
   left: 50%;
-  transition: 0.5s ease-out;
 }
 
 .leftForm.active .leftForm__contents {
