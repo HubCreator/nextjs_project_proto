@@ -63,20 +63,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: aqua;
 }
 
-.container__blueBg {
+.container__bg {
   position: absolute;
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 500px;
+  height: 90%;
   background-color: rgba(225, 225, 225, 0.2);
+  border-radius: 5px;
   box-shadow: 0 5px 45px rgba(0, 0, 0, 0.15);
 }
 
-.container__blueBg__box {
+.container__box {
   position: relative;
   width: 50%;
   height: 100%;

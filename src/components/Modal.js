@@ -65,35 +65,35 @@ const Modal = () => {
       <div className={modalTrigger ? "modal-toggle active" : "modal-toggle"}>
         <div className={signStatus ? "modal-screen" : "modal-screen active"}>
           <div className="modal-container">
-            <div className="container__blueBg">
-              <div className="container__blueBg__box leftBox">
+            <div className="container__bg">
+              <div className="container__box leftBox">
                 <div className="leftBox__content">
                   <div className="leftBox__title">
                     <h3>Title</h3>
-                    <div className="leftBox__title__content">
+                    <p className="leftBox__title__content">
                       <span>{title}</span>
-                    </div>
+                    </p>
                   </div>
                 </div>
                 <div className="leftBox__content">
                   <div className="leftBox__description">
                     <h3>Description</h3>
-                    <div className="leftBox__description__content">
+                    <p className="leftBox__description__content">
                       <span>{description}</span>
-                    </div>
+                    </p>
                   </div>
                 </div>
                 <div className="leftBox__content">
                   <div className="leftBox__name">
                     <h3>Name</h3>
-                    <div className="leftBox__name__content">
+                    <p className="leftBox__name__content">
                       <span>{name}</span>
-                    </div>
+                    </p>
                   </div>
                 </div>
               </div>
 
-              <div className="container__blueBg__box rightBox">
+              <div className="container__box rightBox">
                 <h2 className={isPassedValid ? "box__msg valid" : "box__msg"}>
                   {isPassedValid ? "Go Next Step!" : "Fill in the blank!"}
                 </h2>
