@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-
+import { IoMdWarning } from "react-icons/io";
+import { AiOutlineCheckCircle } from "react-icons/ai";
 const Modal = () => {
   const [signStatus, setSignStatus] = useState(true); // true: left
   const [title, setTitle] = useState("");
@@ -8,6 +9,7 @@ const Modal = () => {
   const [validation, setValidation] = useState([false, false, false]);
   const [isPassedValid, setIsPassedValid] = useState(false);
   const [modalTrigger, setModalTrigger] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
   const onChange = (event) => {
     const {
@@ -29,7 +31,6 @@ const Modal = () => {
 
   const onKeyPress = (event) => {
     const { code } = event;
-    // console.log(code);
     if (code === "Enter" || code === "Digit2" || code === "Digit3")
       event.preventDefault();
   };
@@ -41,12 +42,14 @@ const Modal = () => {
   const handleValidation = () => {
     let tmp = [...validation];
 
-    tmp[0] = title.length >= 5 ? true : false;
+    tmp[0] = title.length >= 3 ? true : false;
     tmp[1] = description.length >= 10 ? true : false;
-    tmp[2] = name.length >= 2 ? true : false;
+    tmp[2] = name.length >= 3 ? true : false;
 
     setValidation(tmp);
     tmp.includes(false) ? setIsPassedValid(false) : setIsPassedValid(true);
+
+    console.log(errorMsg);
   };
 
   useEffect(() => {
@@ -95,7 +98,7 @@ const Modal = () => {
 
               <div className="container__box rightBox">
                 <h2 className={isPassedValid ? "box__msg valid" : "box__msg"}>
-                  {isPassedValid ? "Go Next Step!" : "Fill in the blank!"}
+                  {isPassedValid ? "Go Next Step!" : "Fill in the blanks!"}
                 </h2>
                 <button
                   className={isPassedValid ? "box__btn valid" : "box__btn"}
@@ -116,7 +119,14 @@ const Modal = () => {
             >
               <div className="leftForm__contents">
                 <div className="leftForm__content leftForm__title">
-                  <span>Title</span>
+                  <span>
+                    Title
+                    {validation[0] ? (
+                      <AiOutlineCheckCircle className="validation-icon check" />
+                    ) : (
+                      <IoMdWarning className="validation-icon warning" />
+                    )}
+                  </span>
                   <input
                     className="leftForm__content__title"
                     type="text"
@@ -127,7 +137,14 @@ const Modal = () => {
                   />
                 </div>
                 <div className="leftForm__content leftForm__description">
-                  <span>Description</span>
+                  <span>
+                    Description
+                    {validation[1] ? (
+                      <AiOutlineCheckCircle className="validation-icon check" />
+                    ) : (
+                      <IoMdWarning className="validation-icon warning" />
+                    )}
+                  </span>
                   <textarea
                     className="leftForm__content__description"
                     type="text"
@@ -138,7 +155,14 @@ const Modal = () => {
                   />
                 </div>
                 <div className="leftForm__content leftForm__name">
-                  <span>Name</span>
+                  <span>
+                    Name
+                    {validation[2] ? (
+                      <AiOutlineCheckCircle className="validation-icon check" />
+                    ) : (
+                      <IoMdWarning className="validation-icon warning" />
+                    )}
+                  </span>
                   <input
                     className="leftForm__content__name"
                     type="text"
