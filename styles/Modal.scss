@@ -44,7 +44,7 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  height: clamp(100%, 250vh, 150vh);
+  height: clamp(100%, 250vh, 120vh);
   background-color: #03a9f4;
   position: absolute;
   top: var(--nav-height);
@@ -60,7 +60,7 @@
 .modal-container {
   position: relative;
   width: 80%;
-  height: clamp(530px, 80%, 65%);
+  height: clamp(530px, 80%, 55%);
   margin: 2rem;
   display: flex;
   justify-content: center;
